@@ -1,0 +1,64 @@
+﻿<?php
+declare(strict_types=1);
+
+// Semplice script che mostra una finestra HTML con l'elenco dei file
+// Utilizzo:
+//  - Da browser: avviare un server PHP nella cartella del workspace (es: php -S localhost:8000)
+//    e aprire http://localhost:8000/file_list.php
+//  - Da CLI: php file_list.php (stampa elenco testuale)
+
+function listFiles(string $dir, int $maxDepth = 5, int $depth = 0): array
+{
+    $files = [];
+    if ($depth > $maxDepth) {
+        return $files;
+    }
+    $it = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir, FilesystemIterator::SKIP_DOTS));
+    foreach ($it as $file) {
+        $files[] = $file->getPathname();
+    }
+    sort($files, SORT_NATURAL | SORT_FLAG_CASE);
+    return $files;
+}
+
+$root = __DIR__;
+$files = listFiles($root);
+
+if (php_sapi_name() === 'cli') {
+    foreach ($files as $f) {
+        echo $f . PHP_EOL;
+    }
+    exit;
+}
+
+function h(string $s): string { return htmlspecialchars($s, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
+?>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Elenco file: <?php echo h(basename($root)); ?></title>
+<style>
+body { font-family: Arial, Helvetica, sans-serif; margin: 20px; }
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; padding: 6px; border-bottom: 1px solid #ddd; }
+tr:hover { background: #f5f5f5; }
+</style>
+</head>
+<body>
+<h1>Elenco file: <?php echo h($root); ?></h1>
+<p>File trovati: <?php echo count($files); ?></p>
+<table>
+<thead><tr><th>Percorso</th><th>Dimensione</th><th>Ultima modifica</th></tr></thead>
+<tbody>
+<?php foreach ($files as $f): ?>
+<tr>
+<td><a href="<?php echo h(basename($f)); ?>"><?php echo h(str_replace($root . DIRECTORY_SEPARATOR, '', $f)); ?></a></td>
+<td><?php echo h(@filesize($f) !== false ? number_format(filesize($f)) . ' B' : '-'); ?></td>
+<td><?php echo h(@date('Y-m-d H:i:s', filemtime($f)) ?: '-'); ?></td>
+</tr>
+<?php endforeach; ?>
+</tbody>
+</table>
+</body>
+</html>

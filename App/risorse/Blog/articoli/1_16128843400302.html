@@ -1,0 +1,106 @@
+  /// https://www.byte-post.com/creare-una-lista-con-ricerca-funzioni-htmljs/
+  
+  function ricerca() {
+  var input; 
+  var filtro;
+  var lista;
+  var voci;
+  var x;
+  var i;
+  var testo;
+    input = document.getElementById("barra-ricerca");
+    filtro = input.value.toUpperCase();
+    lista = document.getElementById("elenco");
+    voci = lista.getElementsByTagName("li");
+    for (i = 0; i < voci.length; i++) {
+      x = lista.getElementsByTagName("li")[i];
+      testo = x.textContent || x.innerText;
+      if (testo.toUpperCase().indexOf(filtro) > -1) {
+        voci[i].style.display = "";
+      } else {
+        voci[i].style.display = "none";
+      }
+    }
+  }
+  
+  
+  //------------------------------------------------------------------------------------------------------------
+  
+  
+  
+  <input type="text" id="barra-ricerca" onkeyup="ricerca('barra-ricerca', 'elenco')" placeholder="Cerca un nome">
+<ul id="elenco">
+  <li>Mario</li>
+  <li>Alfredo</li>
+  <li>Giorgio</li>
+  <li>Dario</li>
+  <li>Mara</li>    
+  <li>Davide</li>
+  <li>Aldo</li>  
+  <li>Giuseppe</li>        
+</ul>
+
+<script>
+  function ricerca(tab, lists) {
+  var input; 
+  var filtro;
+  var lista;
+  var voci;
+  var x;
+  var i;
+  var testo;
+    input = document.getElementById(tab);
+    filtro = input.value.toUpperCase();
+    lista = document.getElementById(lists);
+    voci = lista.getElementsByTagName("li");
+    for (i = 0; i < voci.length; i++) {
+      x = lista.getElementsByTagName("li")[i];
+      testo = x.textContent || x.innerText;
+      if (testo.toUpperCase().indexOf(filtro) > -1) {
+        voci[i].style.display = "";
+      } else {
+        voci[i].style.display = "none";
+      }
+    }
+  }
+</script>
+
+//-----------------------------------------------------------------------------------------------------------
+//ricerca con puosante
+
+//<input type="text" id="barra-ricerca" placeholder="Digita un nome">
+//<button onclick="ricerca()">Cerca</button>
+//<ul id="elenco">
+//  <li>Mario</li>
+//  <li>Alfredo</li>
+//  <li>Giorgio</li>
+//  <li>Dario</li>
+//  <li>Mara</li>    
+//  <li>Davide</li>
+//  <li>Aldo</li>  
+//  <li>Giuseppe</li>        
+//</ul>
+//-----------------------------------------------------------------------------------------------------------
+
+  function ricerca() {
+  var input; 
+  var filtro;
+  var lista;
+  var voci;
+  var x;
+  var i;
+  var testo;
+    input = document.getElementById("barra-ricerca");
+    filtro = input.value.toUpperCase();
+    lista = document.getElementById("elenco");
+    voci = lista.getElementsByTagName("li");
+    for (i = 0; i < voci.length; i++) {
+      x = lista.getElementsByTagName("li")[i];
+      testo = x.textContent || x.innerText;
+      if (testo.toUpperCase().indexOf(filtro) > -1) {
+        voci[i].style.display = "";
+      } else {
+        voci[i].style.display = "none";
+      }
+    }
+  }

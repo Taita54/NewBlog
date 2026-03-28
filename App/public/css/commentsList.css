@@ -1,0 +1,57 @@
+/*
+This license is given to you from GDMSOFTANDPICT.
+see more in apposit file.
+*/
+/* 
+    Created on : 8 dic 2020, 17:51:22
+    Author     : GDMSOFTANDPIC <gdmsoft&pict atgdmsoftandpict.it>
+*/
+		.comment-box{
+		margin: 100px; 
+		border: 1px solid #ddd ;
+		width: 400px;
+		position: relative; 
+		background: #fff ;	
+		border-radius: 0px 10px 10px 10px ;
+		display: inline-flex;
+		
+		}
+		.comment-box> p {
+			padding: 5px 10px ;
+		}
+		.heading{
+			width: auto;
+		    display: -webkit-box;
+		    margin: 0px 4px 0 0px;
+		}
+		.heading> img{
+			width: 50px ;
+			border-radius: 0px 50% 0% 50% ;
+		}
+		.heading> a{
+			text-decoration: none;
+			color: blue ;
+		}
+		.heading> .h-in {
+			margin: 1px 5px ;
+			width: 85% ;
+		}
+		.h-in> p {
+			padding: 0 3px 0 0;
+		}
+		.cont{
+			margin: 4px 5px 0px 0;
+		}
+		.c-f{
+			margin-bottom: 5px;
+		}
+		.c-f > a:first-child{
+			color: red ;
+			border: 1px solid red;
+		}
+		.c-f > a > .glyphicon:first-child{
+			top:3px;
+		}
+		.c-f > .btn {
+			border-radius: 30px;
+		}

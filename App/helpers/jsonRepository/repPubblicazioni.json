@@ -1,0 +1,32 @@
+{
+      "repPubblicazioni": {
+      "0": [
+        "Tutte le pubblicazioni",
+        "/media/list/page&1",
+        "",
+        [ "fa-regular fa-newspaper", "color: #3f63a7;" ],
+        "pub"
+      ],
+      "1": [
+        "Carica Pubb. Esterne",
+        "/media/module/create",
+        "",
+        [ "fa-solid fa-file-invoice", "color: #3f63a7;" ],
+        "pub"
+      ],
+      "2": [
+        "Gestione immagini",
+        "/module/create",
+        "",
+        [ "fa-regular fa-image ml-1", "color: #3f63a7;" ],
+        "pub"
+      ],
+      "3": [
+        "Gestione video",
+        "/module/create",
+        "",
+        [ "fa-solid fa-video ml-1", "color: #3f63a7;" ],
+        "pub"
+      ]
+    }
+}

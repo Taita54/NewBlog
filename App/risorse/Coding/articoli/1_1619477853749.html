@@ -1,0 +1,273 @@
+<p>Ma dove immagazzinare questi utimi due dati? Bene, se pensiamo di mettere Enti e persone in una stessa tabella, (anagrafe), l&rsquo;aggiunta di un campo a tale tabella, non avr&agrave; molto senso per quanto riguarda gli Enti, risultato, ogni volta che inseriremo i dati di un ente il campo password non verr&agrave; riempito e alla fine la tabella presenter&agrave; una serie di vuoti.</p>
+
+<p>Come aggirare questo ostacolo?</p>
+
+<p>Aggiungiamo alla tabella il campo &lsquo;tipo&rsquo; con il seguente enum:</p>
+
+<p>ES=Enti e Societ&agrave;; IM=impianti; PE=Persone Fisiche</p>
+
+<p>in questo modo, al momento della registrazione avremo la possibilit&agrave; di diversificare le persone fisiche da enti e impianti , di cui non si richiedono password ne niknames, essendo dati che inserir&agrave; direttamente un operatore.</p>
+
+<p>Nella tabella info, aggiungeremo il campo &lsquo;unico&rsquo; di tipo true/false, in questo modo le informazioni relative ad un campo di tipo &lsquo;unico&rsquo; saranno di volta in volta sostituite con i nuovi valori.</p>
+
+<p>Fino a questo punto, abbiamo le seguenti tabelle:</p>
+
+<table cellspacing="0" style="border-collapse:collapse; page-break-inside:avoid; width:378px">
+	<tbody>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:1px double #808080; height:25px; width:87px">
+			<p>Tabella</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:1px double #808080; width:68px">
+			<p>Campo</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:1px double #808080; width:68px">
+			<p>Tipo</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:1px double #808080; width:71px">
+			<p>Lunghezza</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:1px double #808080; width:42px">
+			<p>Indice</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; height:26px; width:87px">
+			<p>Anagrafe</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Id</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Numerico</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:71px">
+			<p>10</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:none; width:42px">
+			<p>X</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; height:26px; width:87px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Nome</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Testo</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:71px">
+			<p>70</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:none; width:42px">
+			<p>X</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; height:26px; width:87px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Data_nascita</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Data</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:71px">
+			<p>10</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:none; width:42px">
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; height:26px; width:87px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>luogo_nascita</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Testo</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:71px">
+			<p>70</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:none; width:42px">
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; height:26px; width:87px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Tipo</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Testo (enum)</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:71px">
+			<p>2</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:none; width:42px">
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; height:26px; width:87px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:71px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:none; width:42px">
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; height:26px; width:87px">
+			<p>Info</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Id</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Numerico</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:71px">
+			<p>10</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:none; width:42px">
+			<p>X</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; height:26px; width:87px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>nome_info</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Testo</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:71px">
+			<p>70</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:none; width:42px">
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; height:26px; width:87px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Unico</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>true/false</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:71px">
+			<p>1</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:none; width:42px">
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; height:26px; width:87px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:71px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:none; width:42px">
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; height:26px; width:87px">
+			<p>info_anagrafe</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Id</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Numerico</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:71px">
+			<p>10</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:none; width:42px">
+			<p>X</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; height:26px; width:87px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>id_anagrafe</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Numerico</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:71px">
+			<p>10</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:none; width:42px">
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; height:26px; width:87px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>id_info</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Numerico</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:71px">
+			<p>10</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:none; width:42px">
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; height:25px; width:87px">
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Valore</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:68px">
+			<p>Testo</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:none; border-top:none; width:71px">
+			<p>100</p>
+			</td>
+			<td style="border-bottom:1px double #808080; border-left:1px double #808080; border-right:1px double #808080; border-top:none; width:42px">
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+	</tbody>
+</table>

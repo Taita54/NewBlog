@@ -1,0 +1,88 @@
+{
+  "organization": {
+    "dati": {
+      "name": [
+        "GDMSoftAndPict",
+        "Nome organizzazione",
+        "text"
+      ],
+      "baseMail": [
+        "gdmsoftandpict@altervista.org",
+        "Email Base",
+        "email"
+      ],
+      "imm0": [
+        "brand.jpg",
+        "Organization Brand",
+        "img"
+      ],
+      "imm1": [
+        "logo.png",
+        "Logo",
+        "img"
+      ],
+      "idOrg": [
+        "460",
+        "idOrg",
+        "text"
+      ]
+    }
+  },
+  "dimensions": {
+    "dati": {
+      "maxListsToShow": [
+        "3",
+        "n. massimo avvisi",
+        "number"
+      ],
+      "maxFileUpload": [
+        "30000000",
+        "max peso files",
+        "number"
+      ],
+      "avatar_width": [
+        "120",
+        "massima dim. avatar",
+        "number"
+      ],
+      "thumbnail_width": [
+        "120",
+        "max dim. avatar",
+        "number"
+      ],
+      "preview_width": [
+        "70",
+        "max dim. finestra preview",
+        "number"
+      ],
+      "maxAccessAttempt": [
+        "4",
+        "max tent. acc.",
+        "number"
+      ],
+      "maxTimeLocked": [
+        "1 hours",
+        "max. durata sosp.",
+        "text"
+      ],
+      "paymentMessage": [
+        "N.B.: i dati riportati potrebbero risultare incompleti o errati quindi non costituiscono certificazione!",
+        "Messaggio pagamenti",
+        "textarea"
+      ]
+    }
+  },
+  "carouselmessages": {
+    "dati": {
+      "messages": [
+        "cerca le ultime novità nelle sezioni che seguno!",
+        "il sito è attualmente in manutenzione!",
+        "alcune funzionalità non sono disponibili!",
+        "stiamo lavorando alacremente per rimetterlo in funzione!",
+        "",
+        ""
+      ]
+    }
+  }
+
+}

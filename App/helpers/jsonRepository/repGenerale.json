@@ -1,0 +1,16 @@
+{  
+  "repGenerale": {
+    "menuTitles": {
+      "0":["Gallerie foto","/gallery/albums_list/page&1","",["fa-regular fa-images" ,"color: #3a5c9c;"],"rg"],
+      "1":["Gallerie video","/gallery/clips_list/page&1","",["fa-solid fa-video ml-1" ,"color: #3a5c9c;"],"rg"],
+      "2": ["Campionato Italiano","/constructionPage","",[ "fa-regular fa-file-lines", "color: #3a5c9c;" ],"rg"],
+      "3": ["NBA e WNBA","/constructionPage","",[ "fa-regular fa-file-lines", "color: #3a5c9c;" ],"rg"],
+      "4": ["Articoli","/gallery/articles_list/page&1","",["fa-regular fa-newspaper", "color: #3a5c9c;"],"rg"],
+      "5": ["Filmati YouTube","/gallery/links_list/page&1","",["fa-brands fa-square-youtube", "color: #3a5c9c;"],"rg"],
+      "6": ["Modulistica","/gallery/modules_list/page&1","",[ "fa-regular fa-file-lines", "color: #3a5c9c;" ],"rg"],
+      "7":["*","","-",[],"rg"],
+      "8":["Guide","/gallery/guides_list/page&1","",["fa-solid fa-screwdriver-wrench","color: #3a5c9c;"],
+           "rg"]
+    }
+  }
+}

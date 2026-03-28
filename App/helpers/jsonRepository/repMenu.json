@@ -1,0 +1,127 @@
+{
+  "repMenuAdmin": {
+    "menuTitles": {
+      "2": "Presenze totali per squadra",
+      "3": "Modulo ril. presenze",
+      "4": "Elenco tesseramenti per corso",
+      "5": "Elenco acc. medici per corso",
+      "6": "Distribuzione vestiario per team",
+      "0": "-----------------",
+      "1": "-Create new report"
+    }
+  },
+  "repMenuGuest": {
+    "menuTitles": {
+      "0": "-Select a model-",
+      "1": "Model1",
+      "2": "Model2"
+    }
+  },
+  "repManutenzione": {
+    "menuTitles": {
+      "Indexes": [
+        "Indexes",
+        "",
+        "",
+        [ "", "" ]
+      ],
+      "Organization": [
+        "Organization",
+        "/param/list/organization",
+        "",
+        [ "", "" ]
+      ],
+      "Dimensions": [
+        "Dimensions",
+        "/param/list/dimensions",
+        "",
+        [ "", "" ]
+      ],
+      "Directories": [
+        "Directories",
+        "",
+        "",
+        [ "", "" ]
+      ],
+      "usersPartialsViews": [
+        "usersPartialsViews",
+        "",
+        "",
+        [ "", "" ]
+      ],
+      "Others": [
+        "Others",
+        "",
+        "",
+        [ "", "" ]
+      ]
+    }
+  },
+  "repMenuPublications": {
+    "menuTitles": {
+      "0": [
+        "Tutte le pubblicazioni",
+        "/media/list/page&1",
+        "",
+        [ "fa-regular fa-newspaper", "color: #3f63a7;" ]
+      ],
+      "1": [
+        "Carica Pubb. Esterne",
+        "/media/module/create",
+        "",
+        [ "fa-solid fa-file-invoice", "color: #3f63a7;" ]
+      ],
+      "2": [
+        "Gestione immagini",
+        "/module/create",
+        "",
+        [ "fa-regular fa-image ml-1", "color: #3f63a7;" ]
+      ],
+      "3": [
+        "Gestione video",
+        "/module/create",
+        "",
+        [ "fa-solid fa-video ml-1", "color: #3f63a7;" ]
+      ]
+    }
+  },
+  "repAnagrafe": {
+    "menuTitles": {
+      "0": [
+        "Gestisci Contatti",
+        "/contact/list/page&1",
+        "",
+        [ "fa-regular fa-address-book", "color: #3f63a7;" ]
+      ],
+      "1": [
+        "Prenotazione visite",
+        "/fulfilment/createList/",
+        "",
+        [ "fa-solid fa-suitcase-medical", "color: #3f63a7;" ]
+      ],
+      "2": [
+        "Invia Email",
+        "/email/send",
+        "onclick=\"document.getElementById('mailSend').style.display='block'\" target=\"_blank\"",
+        [ "fa-regular fa-envelope", "color: #3f63a7;" ]
+      ]
+    }
+  },
+  "repPermessi": {
+    "menuTitles": {
+      "0": [
+        "Gestisci Utenti",
+        "/auth/list/page&1",
+        "",
+        [ "fa-solid fa-person-circle-question", "color: #3f63a7;" ]
+      ],
+      "1": [
+        "Gestione ruoli",
+        "/roles/list/page&1",
+        "",
+        [ "fa-regular fa-face-rolling-eyes", "color: #3f63a7;" ]
+      ]
+    }
+  }
+}
+

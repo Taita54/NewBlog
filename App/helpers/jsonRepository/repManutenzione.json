@@ -1,0 +1,40 @@
+{
+    "repManutenzione": {
+      "Indexes": [
+        "Indexes",
+        "",
+        "",
+        [ "", "" ]
+      ],
+      "Organization": [
+        "Organization",
+        "/param/list/organization",
+        "",
+        [ "", "" ]
+      ],
+      "Dimensions": [
+        "Dimensions",
+        "/param/list/dimensions",
+        "",
+        [ "", "" ]
+      ],
+      "Directories": [
+        "Directories",
+        "",
+        "",
+        [ "", "" ]
+      ],
+      "usersPartialsViews": [
+        "usersPartialsViews",
+        "",
+        "",
+        [ "", "" ]
+      ],
+      "Others": [
+        "Others",
+        "",
+        "",
+        [ "", "" ]
+      ]
+    }
+}

@@ -1,0 +1,25 @@
+<p>La prima cosa che creeremo sar&agrave; la tabella Anagrafe, destinata a raccogliere i dati di persone e Enti.</p>
+
+<p>Un buon database deve essere in grado di gestire tutte le notizie che interessano, anche quelle che al momento non prevediamo di immettere (magari fino a ieri bastava, per tesserare un atleta, ottenere due documenti e ora ne servono tre.</p>
+
+<p>Ci&ograve; che viene comunemente definito come &lsquo;record&rsquo;, &egrave; un insieme di dati univoci che vengono per questo identificati generalmente con un numero e, in modo omogeneo, raccolti in tabelle.</p>
+
+<p>Per esempio, di una persona sappiamo per certo solamente che avr&agrave; un nome e un cognome, una data e un luogo di nascita. Questi sono dati univoci quindi, questi dati possono tranquillamente essere inseriti in un unico record di una specifica tabella . Ma siccome pi&ugrave; persone possono chiamarsi con lo stesso nome e, in teoria, nulla vieta che due persone con lo stesso nome e cognome possano nascere lo stesso giorno nello stesso posto, per distinguere l&rsquo;uno dall&rsquo;altro, dovremo assegnare ad uno un numero e ad un altro un altro numero.</p>
+
+<p>Questa &egrave; pura teoria sulla gestione dei database e quindi mi fermo subito. Quello che invece &egrave; pi&ugrave; importante &egrave; capire che molti dati relativi ad esempio, ad una singola persona, possono essere moltiplicabili, ossia avere pi&ugrave; valori ( ad esempio i recapiti telefonici), altri possono non servire a nulla , pensate se in un unica tabella fossero raccolti i nomi di societ&agrave; sportive e di atleti o persone che ne fanno parte, mentre per questi ultimi raccogliere la data e il luogo di nascita potrebbe avere un senso, molto meno ne avrebbe, se escludiamo il valore &lsquo;folkloristico&rsquo;, conoscere la data e il luogo di fondazione di una societ&agrave; sportiva.</p>
+
+<p>Per avere un buon compromesso, tra le possibilit&agrave; sopra espresse, realizzeremo tre tabelle in relazione tra loro:</p>
+
+<p>1) tabella <strong>anagrafe</strong>: contenente i seguenti campi, (che contiene i dati base di persone fisiche e Enti o societ&agrave; <img alt="" src="http://localhost/www.gdmsoftandpict.it/risorse/Coding/suppImages/20170718_124542.jpg" style="float:right; height:169px; width:300px" />sportive)</p>
+
+<p><em>id, Nome, data_nascita, luogo_nascita</em>;</p>
+
+<p>2) tabella <strong>info</strong>: contenente i seguenti campi: (che contiene un elenco di tipi di dato che ci interessa gestire)</p>
+
+<p><em>id, nome_info</em></p>
+
+<p>3) tabella <strong>info_anagrafe</strong>: ( che contiene una serie di valori relativi ai dati previsti dalla tabella info)</p>
+
+<p><em>id, id_anagrafe, id_info, valore</em>.</p>
+
+<p>I dati relativi al numero di telefono di un utente della tabella anagrafe verrebbero raccolti creando nella tabella info un campo &lsquo;recapito_tel&rsquo; ( o come vogliamo chiamarlo), mettendo il valore di recapito_tel nella tabella info_anagrafe che &lsquo;riconoscerebbe&rsquo; a quale record di anagrafe si riferisce tramite il campo id_anagrafe e di quale tipo di valore stiamo parlando tramite il campo id_info.<img alt="" src="http://localhost/www.gdmsoftandpict.it/risorse/Coding/suppImages/20170718_124542.jpg" style="float:right; height:169px; width:300px" /></p>

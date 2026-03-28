@@ -1,0 +1,339 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway:300,400';
+
+body > .container {
+    padding: 20px 15px 0;
+}
+#velo{
+    background-color: #15158B;
+    opacity: 85%;
+    z-index:10 !important;
+}
+#titolo{
+    color:#FF8D00;
+    font-size: 4.5em;
+}
+.hb{
+    color:#dde8f7;
+    top: 20px !important;
+}
+div.container{
+    margin-top: 60px;
+}
+#containermain{
+    margin-top: 20px;
+}
+form.form-inline{
+    display: inline-block;
+}
+#main_nav a{
+    color: #fff;
+}
+footer {
+    /*position: fixed;*/
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 40px;
+    line-height: 40px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+}
+.pagination li.active .page-link{
+    cursor:default;
+}
+.btn:focus, .btn:active, button:focus, button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.btn-blue{
+    color:#007BFF;
+    font-size: 0.815rem !important;
+}
+@media (max-width: 450px) {
+.gallery {
+-webkit-column-count: 1;
+-moz-column-count: 1;
+column-count: 1;
+-webkit-column-width: 100%;
+-moz-column-width: 100%;
+column-width: 100%;
+}
+}
+@media (max-width: 400px) {
+.btn.filter {
+padding-left: 1.1rem;
+padding-right: 1.1rem;
+}
+}
+
+#headerblog{
+    height: 100px;
+    line-height: 100px;
+    padding-top: 5px
+}
+#headerblog img{
+    height: 100%;
+    width: 100%;
+    /*position:relative;*/
+}
+#headerblog h2{
+    text-transform: uppercase;
+    text-align: center;
+    color:#fff;
+    margin-top: -80px;
+    /*margin-left: 25%;*/
+    /*position: relative;*/
+}
+/*
+*la classe admin-sidenav è presente nella sidebar di blog2
+*/
+
+.admin-sidenav {
+    width:auto;
+	height: auto;
+	margin-left: 0px; 
+}
+.admin-sidenav a {
+	text-decoration: none; 
+}
+.admin-sidenav li {
+	text-align: justify;
+	padding: .5rem;
+	padding-left: 1rem;
+	-webkit-transition: all .2s linear;
+	transition: all .2s linear;
+	background-color: #000;
+	border: 1px solid #333; 
+}
+.admin-sidenav li a {
+	color: #fff; 
+}
+
+.admin-sidenav li a:active {
+	border-color: #02d3f5; 
+}
+
+.admin-sidenav li:hover {
+	border-radius: 0 .5rem .5rem 0;
+	border-color: #02d3f5;
+	-webkit-transform: translate(30px, 0px);
+	transform: translate(30px, 0px);
+	background: -webkit-linear-gradient(left, #006a7b, #002340);
+	background: linear-gradient(to right, #006a7b, #002340); 
+}
+
+.admin-sidenav li:active {
+	border-color: #02d3f5; 
+}
+
+#admin-main-control .title, #titolo{
+    margin:10px;
+    color:#007FFF;
+    font-family: Copperplate, Calvin, Arial;
+    font-size: 36px;
+    line-height: 100%;
+}
+#admin-main-control>p,#admin-main-control>div>p, .btn-blue{
+    font-family: "Comic Sans MS",Calvin, Arial;
+}
+#admin-main-control>p{
+    font-size: 10px;
+}
+/* fine classi  per blog2  */
+
+div #maincontent{
+    position: relative;
+    height: 650px; 
+    margin-top: 10px; 
+}
+div #blog-left{
+/*    margin-right: 5px;*/
+    width: 30%;
+    height:92%;
+    border: 1px solid #c0c0c0;
+    background-color: #dedede;
+    position: absolute;
+    padding: 5px;
+}
+#blog-left aside{
+    border:1px solid #c0c0c0;
+    height:90%;
+    font-style: italic;
+    font-size: 90%;
+    color: #222;
+}
+#cmdComm{
+    height: 10%;
+}
+#cmdComm button{
+    margin-top: 5px;
+    border-radius: 25px;
+}
+#blog-left aside ul{
+    padding-right: 5px;
+}
+#demo{
+    border:1px solid #c0c0c0;
+}
+#demo iframe{   
+    height: 100%;
+}
+div #blog-right{
+    width: 70%;
+    height:92%;
+    border: 1px solid #c0c0c0;
+    background-color: #dedede;
+    position: relative;
+    padding: 5px;
+    float: right;
+    font-style: italic;
+}
+
+#btn-ed{
+    margin-top: 187px;
+}
+
+ .avatar,.thumbnail span img
+{
+    border-radius: 15px;
+    	display: table-cell;
+	margin: 10px 20px 10px 20px;
+}
+
+.thumbnail:hover{
+    border: 2px solid #C4E519;
+}
+
+.thumbnail span{ 
+    /*//CSS for enlarged image*/
+    position: absolute;
+    background-color: transparent;
+    padding: 2px;
+    /*left: 10px;*/
+    /*border: 1px dashed gray;*/
+    visibility: hidden;
+    color:black;
+    text-decoration: none;
+    z-index: 50;
+}
+
+.thumbnail:hover span{
+  visibility: visible;
+  top: 10px;
+  border: 5px;
+  left: 30px;
+}
+/*il metabox è usato nella pagina galery2*/
+.metabox {
+	background-color: #f7f7ff;
+	padding: 5px 5px 25px 5px;
+	text-align: left;
+	font-size: 11px;
+	line-height: 12pt;
+        width: auto;
+	margin-bottom: 45px;
+	/*height: 1px;*/
+	font-family: open sans, Helvetica, sans-serif;
+	color: #000080;
+}
+
+.mytable{border-collapse:collapse;width:100%;border:solid 1px #c0c0c0;font-family:open sans;font-size:10px}
+         .mytable th,.mytable td{text-align:left;padding:8px;border:solid 1px #c0c0c0}
+         .mytable th{color:#000080}
+         .mytable tr:nth-child(odd){background-color:#f7f7ff}
+         .mytable>thead>tr{background-color:#dde8f7!important}
+         .tbtn{border:0;outline:0;background-color:transparent;font-size:13px;cursor:pointer}
+         .toggler{display:none}
+         .toggler1{display:table-row;}
+         .mytable a{color: #0033cc;}
+         .mytable a:hover{color: #fa0;}
+         .page-header{background-color: #eee;}
+         /*.mytable thead th.ASC:after,.mytable thead th.DESC:after{ content: '↑';color: red;font-weight: bold;padding: 2px;}*/
+         .mytable thead th.ASC:after{ content: '↑';color: red;font-weight: bold;padding: 1px;}
+         .mytable thead th.DESC:after {content:'↓';color: red;font-weight: bold;padding: 1px;}
+         
+/* CSS DASHBOARD */
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      
+    .custom-avatar-file {
+    overflow: hidden;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #eee url('http://localhost:8000/risorse/Avatar/placeholder.jpg');
+    background-size: 50px;
+    border-radius: 50px;
+}
+.miniavatar{
+    position: absolute;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+#cke_1_contents{
+    height:350px !important;
+}
+/* css per il viewer di input files*/
+    .img_viewer {
+      /*width: 600px;*/
+      background: #ccc;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid black;
+      display:none;
+    }
+
+    .img_viewer ol {
+      padding-left: 0;
+    }
+
+    .img_viewer li, .img_viewer > p {
+      background: #eee;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      list-style-type: none;
+      /*border: 1px solid black;*/
+    }
+
+    .img_viewer img {
+      height: 300px;
+      order: 1;
+    }
+
+    .img_viewer >p {
+      line-height: 32px;
+      padding-left: 10px;
+    }
+
+    .img_viewer label, .img_viewer button {
+      background-color: #7F9CCB;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px ridge black;
+      font-size: 0.8rem;
+      height: auto;
+      opacity:0;
+    }
+
+    .img_viewer label:hover, .img_viewer button:hover {
+      background-color: #2D5BA3;
+      color: white;
+    }
+
+    .img_viewer label:active, .img_viewer button:active {
+      background-color: #0D3F8F;
+      color: white;
+    }

@@ -1,0 +1,54 @@
+﻿<html><body> .htaccess, questo sconosciuto
+	
+	<p></p>
+	<p>Quando ho &nbsp;iniziato a realizzare il progetto di questo che è il mio primo sito dinamico, non avevo la benchè minima idea di quello che mi aspettava.</p>
+	<p>La mia esperienza di programmazione era, fino a quel momento, basata su database e finestre e, tutto sommato, seguiva un andamento assolutamente lineare e prevedibile e, sopratutto, quello che funzionava sul computer di casa, funzionava, esattamente allo stesso modo, anche sul computer di ufficio. Ed era questo che mi aspettavo una volta appresi i fondamentali di HTML, CSS, PHP e Javascript .</p>
+	<p>Invece oggi, per esempio, ho constatato che le immagini mostrate nella mia galleria, non seguono l'ordine della query che adopero per estrarle, cosa però che non sembra verificarsi in locale e questo è solo una delle perplessità.</p>
+	<p>Per non parlare della funzione di caricamento, che si rifiuta di seguire la procedura solo in presenza di alcuni files sebbene, a mio parere, ma certo mi sbaglierò, questi siano tutto analoghi ad altri che rispondono regolarmente.</p>
+	<p>O ancora, alcune immagini che 'trasbordano' da loro contenitore, senza accettare la funzione di ridimensionamento che invece si adatta tranquillamente alle altre.</p>
+	<p>Questo significa che dovrò ancora approfondire ???? E va bhe. Intanto voglio tornare all'argomento che mi ero prefissato.</p>
+	<p>Dopo avere speso tanto &nbsp;tempo per preparare le mie routines di gestione ( alcune delle quali ho dovuto abbandonare, nonostante la loro bellezza), quando tutto sembrava funzionare sufficientemente bene, ho deciso di fare il salto sul web per vedere '&quot; l'effetto che fa&quot;.</p>
+	<p>Per &nbsp;prima cosa cerco un host che faccia al caso mio. Poichè sto sperimentando non mi pare il caso di impegnarmi troppo, inizialmente, per una cosa che potrebbe &nbsp;non portare a niente. D'altro canto ho bisogno che, di partenza, sul server siano in funzione il database &nbsp;e una versione di php analoga a quelli che ho adoperato in locale.&nbsp;</p>
+	<p>La scelta migliore, tra le tante possibilità trovate con Goooogle è, incontestabilmente, Altervista che, oltre ai servizi di cui ho bisogno, ne fornisce altri piuttosto comodi unitamente ad uno spazio direi più che discreto per dare inizio alle danze.</p>
+	<p>Decido allora di porre fine agli indugi e iscrivermi al portale ottenendo, poco dopo, il mio spazio bello e &nbsp;... gratuito.</p>
+	<p>Ma ecco la sorpresa. Per sua impostazione di sicurezza, Altervista prevede che il file index, quello da cui prendono origine tutte le altre pagine di qualsiasi sito, debba trovarsi nella root, ossia debba trovarsi nella directory base, allo stesso livello di eventuali directory che contengono altre parti del sito.</p>
+	<p>Il mio progetto, al contrario, prevede che il file index si trovi in una subdirectory.</p>
+	<p>Sebbene il problema sia ben chiaro, quali parametri usare per cercare una soluzione? &nbsp;Quale domanda porre a google o a un qualunque interlocutore?</p>
+	<p>Sebbene scoraggiato mi vado a scorrere, un po' a caso, le chat di Altervista. Il tempo scorre, e io leggo di tutto, a partire da discussioni ormai archiviate perchè superate dalla tecnologia che, intanto, si è evoluta.</p>
+	<p>Arrivo ad una discussione in cui si affronta i files .htaccess (dove li ho già incontrati??). Scorro la discussione e vedo un nesso tra directory e questo genere di files, ma alla fine non trovo una risposta chiara.</p>
+	<p>Decido comunque, di approfondire e trovo un primo link piuttosto vasto , <a href="http://www.htaccess-guide.com/.">http://www.htaccess-guide.com/.</a> Incomincio a scorrere per vedere se trovo qualcosa di utile e, per esempio trovo:</p>
+	<pre> <i>DirectoryIndex index.html
+</i></pre>
+	<p>c'è scritto che, quando un utente arriva da una particolare directory, con questa istruzione &nbsp;viene mostrata per prima la pagina index.html.&nbsp;</p>
+	<p>Più giù trovo anche:</p>
+	<pre>DirectoryIndex index.html index.cgi index.php</pre>
+<p>Che significa che la pagina iniziale che verrà mostrata sarà index.html o in mancanza index.cgi o infine index.php.</p>
+	<p>Interessante ma posso sfruttarlo?</p>
+	<p>Torno indietro alla prima pagina per vedere se ci sono indicazioni che mi possono aiutare. Ovviamente non ne trovo ma, in compenso, capisco due cose fondamentali, anzi tre:</p>
+	<p>1) .htaccess non è una estensione, ma un nome proprio di file;</p>
+	<p>2) i file .htaccess, devono avere una sintassi precisa, pena il blocco di tutta la directory che lo contiene e le sue sotto directory;</p>
+	<p>3) un file .htaccess funziona per la directory che lo contiene e per tutte le sue sottodirectory.</p>
+	<p>Va bene, ma ancora non ho risolto il mio problema. Io devo fare avviare il mio sito da una pagina index che si trova in una sottodir della root, pena, cambiare tutti i link alle pagine del sito. Provo a dare ancora uno sguardo &nbsp;a qualche altra pagina , ma sono troppe e io voglio arrivare ad una soluzione. Archivio l'indirizzo del sito nei preferiti del mio browser con l'idea di ritornarci per ulteriori approfondimenti e riprendo la ricerca sul web.</p>
+	<p>Trovo altri mille 'indizi' che mi incoraggiano a proseguire sulla strada intrapresa. Poi, finalmente, una chat dove qualcuno pone &nbsp;una domanda molto simile alla mia e la risposta:</p>
+	
+	<pre>&lt;IfModule mod_rewrite.c&gt;
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ -[L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+ReweiteRule ./index.php [L]
+&lt;IfModule&gt;
+</pre><p>Non vi sono molte altre spiegazioni, ma è tardi e sono alla canna del gas, copio e incollo e zac, ci ho preso.</p>
+	<p>Ora si tratta di capire cosa sto facendo e questo richiederà ulteriori ricerche, ma intanto posso andare avanti.</p>
+	<p><b>Rewrite </b>è un modulo nativo di Apache, quindi, se in locale abbiamo installato Apache per i nostri esperimenti dovrebbe trovarsi un richiamo nel file di configurazione httpd.conf. Per essere 'attivo', il modulo NON deve essere preceduto da #.</p>
+	<p><b>RewriteEngine On -</b></p>
+	<p><b>RewriteBase /&nbsp;</b></p>
+	<p><i>'accendono il motore' di Apache stabilendo il punto di partenza delle &nbsp;direttive.</i></p>
+	<p><b>RewriteRule ^index\.php$ -[L]</b> <i>è una espressione regolare con cui si verifica l'esistenza di una richiesta alla pagina index</i></p>
+	<p><b>RewriteCond %{REQUEST_FILENAME} !-f</b></p>
+	<p><b>RewriteCond %{REQUEST_FILENAME} !-d</b> <i>sono due indicazioni di 'condizioni' che si devono verificare prima di effettuare il reindirizzamento, % stà per &quot;qualsiasi&quot;, &nbsp;il '!' stà ovviamente per &quot;non&quot; e -f (-d ) è per esempio presente in riga di comando tipo: php -S localhost:3000 &nbsp;-f dirprogetto/dirindex</i></p>
+	<p>  <b>ReweiteRule ./index.php [L] &nbsp;</b><i>è il vero punto cruciale di questo punto delle direttive perchè riscrive l'URL che stiamo cercando. Se per esempio prima di /mettiamo nomedir, ecco che abbiamo la 'localizzazione della directory dove si trova il nostro index </i></p>
+	<p>Bene, adesso mi sembra tutto più chiaro! Ma se volessi fare anche altro? ...</p>
+	<p>Allora dovrò continuare a cercare.</p>
+	<p></p></body></html>
